@@ -3,6 +3,7 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const checkAuth =  require('./api/middleware/check-auth');
 
 
 const productRoutes = require('./api/routes/products');
@@ -28,7 +29,7 @@ app.use((req,res,next)=>{
 });
 
 app.use('/products',productRoutes);
-app.use("/orders", orderRoutes);
+app.use("/orders", [checkAuth,orderRoutes]);
 app.use('/users',userRoutes);
 
 
