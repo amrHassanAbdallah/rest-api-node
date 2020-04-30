@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "",
@@ -17,10 +19,12 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.6.4",
-    "multer": "^1.4.1"
+    "multer": "^1.4.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "morgan": "^1.9.1",
     "nodemon": "^1.19.1"
-  }
+  },
+  "snyk": true
 }
